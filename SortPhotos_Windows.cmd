@@ -3,59 +3,59 @@
 :Start
 cls
 echo.
-echo ÕÕÆ¬·ÖÀà½Å±¾ v1.0.1
-echo ²Ö¿â£ºhttps://github.com/Switernal/SortPhotos
+echo ç…§ç‰‡åˆ†ç±»è„šæœ¬ v1.0.1
+echo ä»“åº“ï¼šhttps://github.com/Switernal/SortPhotos
 echo.
-echo ÇëÎñ±Ø±£Ö¤ÎÄ¼ş¼ĞÃüÃû¸ñÊ½Îª"YYYY-MM-dd"¿ªÍ·£¨ÈÕÆÚ¸ñÊ½£©
+echo è¯·åŠ¡å¿…ä¿è¯æ–‡ä»¶å¤¹å‘½åæ ¼å¼ä¸º"YYYY-MM-dd"å¼€å¤´ï¼ˆæ—¥æœŸæ ¼å¼ï¼‰
 echo.
-set /p "work_dir=ÊäÈëÕÕÆ¬Ä¿Â¼£¨¿ÉÒÔÖ±½ÓÍÏ×§ÎÄ¼ş¼ĞÖÁ´Ë´°¿Ú£©: "
+set /p "work_dir=è¾“å…¥ç…§ç‰‡ç›®å½•ï¼ˆå¯ä»¥ç›´æ¥æ‹–æ‹½æ–‡ä»¶å¤¹è‡³æ­¤çª—å£ï¼‰: "
 
-REM ÅĞ¶ÏÊÇ·ñ´«ÈëÄ¿Â¼²ÎÊı
+REM åˆ¤æ–­æ˜¯å¦ä¼ å…¥ç›®å½•å‚æ•°
 if "%work_dir%"=="" (
     echo.
-    echo ÕÕÆ¬Ä¿Â¼Îª¿Õ!
+    echo ç…§ç‰‡ç›®å½•ä¸ºç©º!
     echo.
-    echo ÇëÖØĞÂÊäÈëÕÕÆ¬Ä¿Â¼
+    echo è¯·é‡æ–°è¾“å…¥ç…§ç‰‡ç›®å½•
     echo.
     pause
     goto Start
 ) else (
     echo.
-    echo µ±Ç°´¦ÀíÄ¿Â¼: %work_dir%
+    echo å½“å‰å¤„ç†ç›®å½•: %work_dir%
 )
 
-REM »ñÈ¡ÈÕÆÚĞÅÏ¢
+REM è·å–æ—¥æœŸä¿¡æ¯
 for /f "delims=" %%a in ('echo %work_dir%') do set "category_name=%%~nxa"
 set "date=%category_name:~0,10%"
-echo µ±Ç°´¦ÀíÈÕÆÚ: %date%
+echo å½“å‰å¤„ç†æ—¥æœŸ: %date%
 echo.
 
-REM ³õÊ¼»¯¼ÆÊıÆ÷
+REM åˆå§‹åŒ–è®¡æ•°å™¨
 set /a num_of_JPEGs=0
 set /a num_of_RAWs=0
 set /a num_of_Videos=0
 
-echo ·ÖÀàÈÕÖ¾:
+echo åˆ†ç±»æ—¥å¿—:
 echo.
 
-REM Ñ­»·´¦ÀíÎÄ¼ş¼ĞÖĞµÄÎÄ¼ş
+REM å¾ªç¯å¤„ç†æ–‡ä»¶å¤¹ä¸­çš„æ–‡ä»¶
 for %%i in ("%work_dir%\*") do (
 
-    REM ´¦ÀíJPEGÎÄ¼ş
+    REM å¤„ç†JPEGæ–‡ä»¶
     if /i "%%~xi"==".jpg" (
         call :ProcessFile "%%i" %date%_JPEG-Origin jpg
     ) else if /i "%%~xi"==".jpeg" (
         call :ProcessFile "%%i" %date%_JPEG-Origin jpeg
     )
 
-    REM ´¦ÀíÊÓÆµÎÄ¼ş
+    REM å¤„ç†è§†é¢‘æ–‡ä»¶
     if /i "%%~xi"==".mp4" (
         call :ProcessFile "%%i" %date%_Video-Origin mp4
     ) else if /i "%%~xi"==".mov" (
         call :ProcessFile "%%i" %date%_Video-Origin mov
     )
 
-    REM ´¦ÀíRAWÎÄ¼ş
+    REM å¤„ç†RAWæ–‡ä»¶
     if /i "%%~xi"==".nef" (
         call :ProcessFile "%%i" %date%_RAW nef
     ) else if /i "%%~xi"==".dng" (
@@ -81,23 +81,23 @@ for %%i in ("%work_dir%\*") do (
     ) else if /i "%%~xi"==".pef" (
         call :ProcessFile "%%i" %date%_RAW pef
     )
-   REM Èç¹ûÓĞ±ğµÄRAW¸ñÊ½£¬¿ÉÒÔÔÚÕâ±ßif else×·¼Ó
+   REM å¦‚æœæœ‰åˆ«çš„RAWæ ¼å¼ï¼Œå¯ä»¥åœ¨è¿™è¾¹if elseè¿½åŠ 
 
 )
 
 echo.
-echo ³É¹¦ÒÆ¶¯ JPG ÎÄ¼ş: %num_of_JPEGs% ¸ö
-echo ³É¹¦ÒÆ¶¯ RAW ÎÄ¼ş: %num_of_RAWs% ¸ö
-echo ³É¹¦ÒÆ¶¯ ÊÓÆµ ÎÄ¼ş: %num_of_Videos% ¸ö
+echo æˆåŠŸç§»åŠ¨ JPG æ–‡ä»¶: %num_of_JPEGs% ä¸ª
+echo æˆåŠŸç§»åŠ¨ RAW æ–‡ä»¶: %num_of_RAWs% ä¸ª
+echo æˆåŠŸç§»åŠ¨ è§†é¢‘ æ–‡ä»¶: %num_of_Videos% ä¸ª
 echo.
 
-REM ´´½¨¶îÍâµÄÎÄ¼ş¼Ğ
+REM åˆ›å»ºé¢å¤–çš„æ–‡ä»¶å¤¹
 if not exist "%work_dir%\%date%_JPEG-Edit\" mkdir "%work_dir%\%date%_JPEG-Edit"
 if not exist "%work_dir%\%date%_JPEG-Share\" mkdir "%work_dir%\%date%_JPEG-Share"
 if not exist "%work_dir%\%date%_JPEG-Watermark\" mkdir "%work_dir%\%date%_JPEG-Watermark"
 
-echo ±¾´Î´¦Àí½áÊø£¬°´ÈÎÒâ¼ü¿ªÊ¼ÏÂÒ»´ÎÔËĞĞ
-echo ÈôÏ£Íû½áÊøÔËĞĞ£¬ÇëÖ±½Ó¹Ø±Õ´°¿Ú
+echo æœ¬æ¬¡å¤„ç†ç»“æŸï¼ŒæŒ‰ä»»æ„é”®å¼€å§‹ä¸‹ä¸€æ¬¡è¿è¡Œ
+echo è‹¥å¸Œæœ›ç»“æŸè¿è¡Œï¼Œè¯·ç›´æ¥å…³é—­çª—å£
 echo.
 pause
 
@@ -111,7 +111,7 @@ set "file_type=%~3"
 if not exist "%target_dir%\" mkdir "%target_dir%"
 move /Y "%file_path%" "%target_dir%\"
 if not errorlevel 1 (
-    echo %~nx1 ³É¹¦ÒÆ¶¯µ½ %~2
+    echo %~nx1 æˆåŠŸç§»åŠ¨åˆ° %~2
     if "%file_type%"=="jpg" (
         set /a num_of_JPEGs+=1
     ) else if "%file_type%"=="jpeg" (
