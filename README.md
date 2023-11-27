@@ -1,6 +1,6 @@
 # 照片自动分类脚本
 
-参考B站up主“摄影师EDI”的照片分类方法，将拍摄的照片和视频先使用 Lightroom 按日期导入到文件夹中，然后运行脚本，输入日期文件夹目录，即可将文件夹中的文件按照 JPEG、RAW、MP4 等格式的文件进行分类。
+参考B站 up 主 [摄影师EDI](https://space.bilibili.com/84480709) 的照片分类方法，将拍摄的照片和视频先使用 Lightroom 按日期导入到文件夹中，然后运行脚本，输入日期文件夹目录，即可将文件夹中的文件按照 JPEG、RAW、MP4 等格式的文件进行分类。
 
 最终分类效果如下：
 
@@ -16,7 +16,7 @@
   - 2023-01-01_JPEG-Watermark
 ```
 
-文件夹说明：
+## 文件夹说明
 
 `_JPEG-Edit`：修过后的原图导出的JPEG，质量和分辨率最高
 
@@ -24,14 +24,13 @@
 
 `_JPEG-Watermark`：修过后的原图导出的JPEG，出于保护或声明版权的目的，添加过水印的文件
 
-以上几种类型可以再Lightroom中添加导出预设，具体细节请看：
+## 一些说明
 
-[【Edi x TourBox后期训练营】如何管理和批量处理旅行照片 - 完整的图片数据整理方案](https://www.bilibili.com/video/BV1uv411v7Qe/?share_source=copy_web&vd_source=a0814bb71452714cb6dda68fa0e85e4a)
-
+以上几种类型可以再Lightroom中添加导出预设，具体细节请看：[【Edi x TourBox后期训练营】如何管理和批量处理旅行照片 - 完整的图片数据整理方案](https://www.bilibili.com/video/BV1uv411v7Qe/?share_source=copy_web&vd_source=a0814bb71452714cb6dda68fa0e85e4a)
 
 脚本个人自用, 此仓库仅作为备份使用。如果有其他需求或是建议也欢迎在 Issues 中一起讨论。
 
-如果有其它需求，也可以直接在脚本上改，比如脚本中没有的其他的RAW文件类型。
+如果有其它需求，也可以直接在脚本上改，比如脚本中没有的其他的 RAW 文件类型。
 
 初学摄影，求个大佬带带。
 
