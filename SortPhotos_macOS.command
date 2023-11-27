@@ -2,6 +2,7 @@ echo "\n照片分类脚本 v1.0.1\n"
 
 while [ 1 -ne 0 ]
 do
+    echo "请务必保证文件夹命名格式为"YYYY-MM-dd"开头（日期格式）\n"
     echo "输入照片目录: \c"
     read work_dir
 
