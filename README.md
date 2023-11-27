@@ -26,9 +26,8 @@
 
 以上几种类型可以再Lightroom中添加导出预设，具体细节请看：
 
-```html
-<iframe src="//player.bilibili.com/player.html?aid=246652146&bvid=BV1uv411v7Qe&cid=298218138&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-```
+[b站](//player.bilibili.com/player.html?aid=246652146&bvid=BV1uv411v7Qe&cid=298218138&p=1 ':include :type=iframe width=100% height=400px')
+
 
 脚本个人自用, 此仓库仅作为备份使用。如果有其他需求或是建议也欢迎在 Issues 中一起讨论。
 
