@@ -36,6 +36,8 @@
 
 # 使用方法
 
+在页面右侧 Releases 中下载对应系统的文件
+
 ## Windows
 
 直接双击运行 `SortPhotos_Windows.cmd` 文件后根据提示操作
