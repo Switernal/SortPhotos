@@ -1,4 +1,5 @@
 echo "\n照片分类脚本 v1.0.1\n"
+echo "仓库：https://github.com/Switernal/SortPhotos\n\n"
 
 # 判断是否传入目录参数
 if [ ! -n "$1" ]
